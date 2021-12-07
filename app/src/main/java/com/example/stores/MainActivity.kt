@@ -7,7 +7,7 @@ import com.example.stores.databinding.ActivityMainBinding
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class MainActivity : AppCompatActivity(), OnClickListener {
+class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
 
     private lateinit var mBinding: ActivityMainBinding
 
@@ -92,5 +92,12 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             }
 
         }
+    }
+
+    /*
+    *MainAux
+    * */
+    override fun hideFab(isVisible: Boolean) {
+        if (isVisible)mBinding.fab.show() else mBinding.fab.hide()
     }
 }
